@@ -6,6 +6,7 @@
 
 html {
   font-size: 16px;
+  font-weight: 100;
 }
 
 @media (min-width: 1000px) {
@@ -42,7 +43,29 @@ strong {
 }
 
 a {
+  position: relative;
   color: #393939;
+  text-decoration: none;
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  bottom: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 8px;
+  background: #1a32b9;
+  opacity: 0.2;
+  transition: 0.3s all;
+  z-index: -1;
+}
+
+a:hover::after {
+  opacity: 1;
+  width: 100%;
+  bottom: -10px;
 }
 
 @media (max-width: 1000px) {
